@@ -49,9 +49,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <125>;
             flavor = "tap-preferred";
-            quick-tap-ms = <200>;
+            quick-tap-ms = <125>;
             require-prior-idle-ms = <125>;
             hold-trigger-on-release;
         };
@@ -183,7 +183,7 @@
 &kp F1                   &kp F2          &kp F3         &kp F4         &kp F5                                                                                                                           &kp F6                &kp F7              &kp F8              &kp F9           &kp F10
 &kp EQUAL                &kp N1          &kp N2         &kp N3         &kp N4           &kp N5                                                                                                  &kp N6  &kp N7                &kp N8              &kp N9              &kp N0           &kp MINUS
 &kp TAB                  &kp Q           &kp W          &kp E          &kp R            &kp T                                                                                                   &kp Y   &kp U                 &kp I               &kp O               &kp P            &kp BSLH
-&kp ESC                  &ht_kp LCTRL S  &ht_kp LALT S  &ht_kp LGUI D  &ht_kp LSHIFT F  &kp G                                                                                                   &kp H   &ht_kp RIGHT_SHIFT J  &ht_kp RIGHT_GUI K  &ht_kp RIGHT_ALT L  &ht_kp RCTRL P   &kp SQT
+&kp ESC                  &ht_kp LCTRL A  &ht_kp LALT S  &ht_kp LGUI D  &ht_kp LSHIFT F  &kp G                                                                                                   &kp H   &ht_kp RIGHT_SHIFT J  &ht_kp RIGHT_GUI K  &ht_kp RIGHT_ALT L  &ht_kp RCTRL P   &kp SQT
 &ht_kp LEFT_SHIFT GRAVE  &kp Z           &kp X          &kp C          &kp V            &kp B   &td_shift_caps_word  &kp LCTRL        &layer_td  &kp LGUI  &kp TAB         &td_shift_caps_word  &kp N   &kp M                 &kp COMMA           &kp DOT             &kp FSLH         &kp RIGHT_SHIFT
 &magic 3 0               &kp HOME        &kp PAGE_UP    &kp PAGE_DOWN  &kp END                  &ht_mo 2 BACKSPACE   &ht_mo 1 DELETE  &kp LALT   &kp RALT  &ht_mo 1 ENTER  &ht_mo 2 SPACE               &kp LEFT              &kp UP_ARROW        &kp DOWN_ARROW      &kp RIGHT_ARROW  &kp LEFT_CONTROL
             >;
