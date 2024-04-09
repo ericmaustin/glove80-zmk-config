@@ -65,6 +65,8 @@
             tapping-term-ms = <150>;
             flavor = "tap-preferred";
             quick-tap-ms = <100>;
+            require-prior-idle-ms = <200>;
+            hold-trigger-on-release;
         };
 
         td_shift_caps_word: td_shift_caps_word {
