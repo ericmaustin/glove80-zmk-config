@@ -283,12 +283,12 @@
 
         combo_perv {
             bindings = <&kp PERCENT>;
-            key-positions = <49 38>;
+            key-positions = <50 39>;
         };
 
         combo_dollar {
             bindings = <&kp DOLLAR>;
-            key-positions = <37 50>;
+            key-positions = <51 38>;
         };
 
         combo_hash {
