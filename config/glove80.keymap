@@ -270,6 +270,56 @@
             bindings = <&kp CAPSLOCK>;
             key-positions = <52 57>;
         };
+
+        combo_backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <40 59>;
+        };
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <58 41>;
+        };
+
+        combo_perv {
+            bindings = <&kp PERCENT>;
+            key-positions = <49 38>;
+        };
+
+        combo_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <37 50>;
+        };
+
+        combo_hash {
+            bindings = <&kp HASH>;
+            key-positions = <26 37>;
+        };
+
+        combo_star {
+            bindings = <&kp ASTERISK>;
+            key-positions = <41 30>;
+        };
+
+        combo_amp {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <29 42>;
+        };
+
+        combo_semi {
+            bindings = <&kp SEMI>;
+            key-positions = <60 61>;
+        };
+
+        combo_colon {
+            bindings = <&kp COLON>;
+            key-positions = <31 30>;
+        };
+
+        combo_at {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <25 38>;
+        };
     };
 
     keymap {
@@ -285,12 +335,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1                 &kp F2                    &kp F3            &kp F4            &kp F5                                                                                                                                                            &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
-&kp EQUAL              &kp N1                    &kp N2            &kp N3            &kp N4             &kp N5                                                                                                                                 &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp MINUS
-&kp TAB                &kp Q                     &kp W             &kp E             &kp R              &kp T                                                                                                                                  &kp Y   &kp U                    &kp I             &kp O             &kp P              &kp BSLH
-&kp ESC                &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S  &ht_kp_lt LGUI D  &ht_kp_lt LSHFT F  &kp G                                                                                                                                  &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp SQT
-&ht_kp_lt LSHFT GRAVE  &kp Z                     &kp X             &kp C             &kp V              &kp B   &td_shift_caps_word  &ht_mo 4 LCTRL   &ht_sk_kp LGUI LGUI  &ht_sk_kp RIGHT_GUI RIGHT_GUI  &ht_mo 4 ENTER  &td_shift_caps_word  &kp N   &kp M                    &kp COMMA         &kp DOT           &kp FSLH           &kp RIGHT_SHIFT
-&magic 3 0             &kp HOME                  &kp PAGE_UP       &kp PAGE_DOWN     &kp END                    &ht_mo 2 BACKSPACE   &ht_mo 1 DELETE  &kp LALT             &kp RALT                       &ht_mo 1 TAB    &ht_mo 2 SPACE               &kp LEFT                 &kp UP_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW    &layer_td
+&kp F1                 &kp F2                    &kp F3            &kp F4            &kp F5                                                                                                                                                                                  &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
+&kp EQUAL              &kp N1                    &kp N2            &kp N3            &kp N4             &kp N5                                                                                                                                                       &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp MINUS
+&kp TAB                &kp Q                     &kp W             &kp E             &kp R              &kp T                                                                                                                                                        &kp Y   &kp U                    &kp I             &kp O             &kp P              &kp BSLH
+&kp ESC                &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S  &ht_kp_lt LGUI D  &ht_kp_lt LSHFT F  &kp G                                                                                                                                                        &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp SQT
+&ht_kp_lt LSHFT GRAVE  &kp Z                     &kp X             &kp C             &kp V              &kp B   &ht_mo 2 ESC             &ht_sk_kp LCTRL LCTRL  &ht_sk_kp LGUI LGUI  &ht_sk_kp RIGHT_GUI RIGHT_GUI  &ht_sk_kp RCTRL RCTRL  &ht_mo 2 TAB              &kp N   &kp M                    &kp COMMA         &kp DOT           &kp FSLH           &kp RIGHT_SHIFT
+&magic 3 0             &kp HOME                  &kp PAGE_DOWN     &kp PAGE_UP       &kp END                    &ht_kp LSHIFT BACKSPACE  &ht_mo 1 DELETE        &kp LALT             &kp RALT                       &ht_mo 1 ENTER         &ht_kp SPACE RIGHT_SHIFT          &kp LEFT                 &kp DOWN          &kp UP_ARROW      &kp RIGHT_ARROW    &layer_td
             >;
         };
 
