@@ -180,7 +180,7 @@
             key-positions = <26 27>;
             layers = <0>;
             require-prior-idle-ms = <200>;
-            timeout-ms = <50>;
+            timeout-ms = <25>;
         };
 
         combo_right_parens {
@@ -242,7 +242,7 @@
         combo_plus {
             bindings = <&kp PLUS>;
             key-positions = <26 25>;
-            timeout-ms = <50>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <200>;
             layers = <0>;
         };
@@ -273,13 +273,13 @@
 
         combo_cp {
             bindings = <&gui_c>;
-            key-positions = <50 49>;
+            key-positions = <47 50>;
             layers = <0>;
         };
 
         combo_paste {
             bindings = <&gui_v>;
-            key-positions = <48 49>;
+            key-positions = <49 48>;
             layers = <0>;
         };
 
