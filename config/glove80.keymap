@@ -293,12 +293,7 @@
         toggle_nums: toggle_nums {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&to 3>,
-                <&macro_wait_time 100>,
-                <&rgb_ug RGB_ON>,
-                <&macro_wait_time 250>,
-                <&rgb_ug RGB_COLOR_HSB(323,71,49)>;
+            bindings = <&to 3>, <&macro_wait_time 100>, <&rgb_ug RGB_TOG>;
 
             label = "TOGGLE_NUMS";
         };
@@ -306,12 +301,7 @@
         toggle_nav: toggle_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&to 1>,
-                <&macro_wait_time 100>,
-                <&rgb_ug RGB_ON>,
-                <&macro_wait_time 250>,
-                <&rgb_ug RGB_COLOR_HSB(66,71,50)>;
+            bindings = <&to 1>, <&macro_wait_time 100>, <&rgb_ug RGB_TOG>;
 
             label = "TOGGLE_NAV";
         };
@@ -319,7 +309,7 @@
         toggle_base: toggle_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_wait_time 100>, <&rgb_ug RGB_OFF>;
+            bindings = <&to 0>, <&macro_wait_time 100>, <&rgb_ug RGB_TOG>;
 
             label = "TOGGLE_BASE";
         };
