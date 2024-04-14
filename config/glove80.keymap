@@ -289,6 +289,27 @@
             bindings = <&kp LA(RIGHT) &kp LA(LS(LEFT)) &kp LG(P)>;
             label = "MACRO_PASTE_REPLACE";
         };
+
+        toggle_nums: toggle_nums {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 3 &rgb_ug RGB_COLOR_HSB(323,71,49) &rgb_ug RGB_ON>;
+            label = "TOGGLE_NUMS";
+        };
+
+        toggle_nav: toggle_nav {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 1 &rgb_ug RGB_COLOR_HSB(66,71,50) &rgb_ug RGB_ON>;
+            label = "TOGGLE_NAV";
+        };
+
+        toggle_base: toggle_base {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &rgb_ug RGB_OFF>;
+            label = "TOGGLE_BASE";
+        };
     };
 
     combos {
@@ -581,23 +602,23 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1                 &kp F2                    &kp F3                            &kp F4                  &kp F5                                                                                                                                  &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
-&kp EQUAL              &kp N1                    &kp N2                            &kp N3                  &kp N4              &kp N5                                                                                                      &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp MINUS
-&kp TAB                &kp Q                     &kp W                             &kp E                   &kp R               &kp T                                                                                                       &kp Y   &kp U                    &kp I             &kp O             &kp COLON          &kp BSLH
-&kp ESC                &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S                  &ht_kp_lt LGUI D        &ht_kp_lt LSHFT F   &kp G                                                                                                       &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp SQT
-&ht_kp_lt LSHFT GRAVE  &kp Z                     &kp X                             &kp C                   &kp V               &kp B   &ht_kp_lt LEFT_SHIFT ESC  &kp RGUI         &to 1  &to 1  &kp RCTRL       &ht_kp_rt RIGHT_SHIFT TAB  &kp N   &kp M                    &kp COMMA         &kp DOT           &kp FSLH           &kp RIGHT_SHIFT
-&magic 4 0             &kp HOME                  &ht_kp_lt LEFT_CONTROL PAGE_DOWN  &ht_kp_lt RALT PAGE_UP  &ht_kp_lt LGUI END          &ht_mo 2 BACKSPACE        &ht_mo 1 DELETE  &to 3  &to 3  &ht_mo 1 ENTER  &ht_mo 2 SPACE                     &kp LEFT                 &kp DOWN          &kp UP_ARROW      &kp RIGHT_ARROW    &layer_td
+&kp F1                 &kp F2                    &kp F3                            &kp F4                  &kp F5                                                                                                                                                &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
+&kp EQUAL              &kp N1                    &kp N2                            &kp N3                  &kp N4              &kp N5                                                                                                                    &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp MINUS
+&kp TAB                &kp Q                     &kp W                             &kp E                   &kp R               &kp T                                                                                                                     &kp Y   &kp U                    &kp I             &kp O             &kp COLON          &kp BSLH
+&kp ESC                &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S                  &ht_kp_lt LGUI D        &ht_kp_lt LSHFT F   &kp G                                                                                                                     &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp SQT
+&ht_kp_lt LSHFT GRAVE  &kp Z                     &kp X                             &kp C                   &kp V               &kp B   &ht_kp_lt LEFT_SHIFT ESC  &kp RGUI         &toggle_nav   &toggle_nav   &kp RCTRL       &ht_kp_rt RIGHT_SHIFT TAB  &kp N   &kp M                    &kp COMMA         &kp DOT           &kp FSLH           &kp RIGHT_SHIFT
+&magic 4 0             &kp HOME                  &ht_kp_lt LEFT_CONTROL PAGE_DOWN  &ht_kp_lt RALT PAGE_UP  &ht_kp_lt LGUI END          &ht_mo 2 BACKSPACE        &ht_mo 1 DELETE  &toggle_nums  &toggle_nums  &ht_mo 1 ENTER  &ht_mo 2 SPACE                     &kp LEFT                 &kp DOWN          &kp UP_ARROW      &kp RIGHT_ARROW    &layer_td
             >;
         };
 
         nav {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)  &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                         &kp RS(C_MUTE)    &kp C_VOLUME_UP        &kp C_VOL_DN               &trans             &trans
-&trans                &trans                    &trans          &trans                   &trans                   &trans                                                               &trans     &trans            &trans                 &trans                     &trans             &trans
-&trans                &to 0                     &kp LA(RIGHT)   &kp UP_ARROW             &macro_paste_replace     &kp LC(T)                                                            &kp LG(C)  &kp LG(Z)         &macro_new_line_above  &macro_new_line_below_mac  &kp N0             &trans
-&to 0                 &kp LA(LEFT)              &kp LEFT_ARROW  &kp UP_ARROW             &kp RIGHT                &kp LC(G)                                                            &kp LEFT   &kp DOWN          &kp UP_ARROW           &kp RIGHT                  &kp LG(P)          &trans
-&trans                &kp LG(Z)                 &kp DELETE      &macro_del_current_word  &macro_sel_current_word  &kp LA(LEFT)  &trans  &trans  &to 0   &to 0   &trans         &trans  &kp N6     &kp N7            &kp LS(TAB)            &kp TAB                    &kp LG(F)          &trans
-&trans                &none                     &none           &kp F11                  &kp F12                                &trans  &trans  &trans  &trans  &kp LA(ENTER)  &trans             &kp LA(LS(LEFT))  &kp LA(LS(DOWN))       &kp LS(LA(UP_ARROW))       &kp LS(LA(RIGHT))  &trans
+&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)  &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                                     &kp RS(C_MUTE)    &kp C_VOLUME_UP        &kp C_VOL_DN               &trans             &trans
+&trans                &trans                    &trans          &trans                   &trans                   &trans                                                                           &trans     &trans            &trans                 &trans                     &trans             &trans
+&trans                &toggle_base              &kp LA(RIGHT)   &kp UP_ARROW             &macro_paste_replace     &kp LC(T)                                                                        &kp LG(C)  &kp LG(Z)         &macro_new_line_above  &macro_new_line_below_mac  &kp N0             &trans
+&toggle_base          &kp LA(LEFT)              &kp LEFT_ARROW  &kp UP_ARROW             &kp RIGHT                &kp LC(G)                                                                        &kp LEFT   &kp DOWN          &kp UP_ARROW           &kp RIGHT                  &kp LG(P)          &trans
+&trans                &kp LG(Z)                 &kp DELETE      &macro_del_current_word  &macro_sel_current_word  &kp LA(LEFT)  &trans  &trans  &toggle_base  &toggle_base  &trans         &trans  &kp N6     &kp N7            &kp LS(TAB)            &kp TAB                    &kp LG(F)          &trans
+&trans                &none                     &none           &kp F11                  &kp F12                                &trans  &trans  &trans        &trans        &kp LA(ENTER)  &trans             &kp LA(LS(LEFT))  &kp LA(LS(DOWN))       &kp LS(LA(UP_ARROW))       &kp LS(LA(RIGHT))  &trans
             >;
         };
 
@@ -614,12 +635,12 @@
 
         nums {
             bindings = <
-&trans  &trans    &trans                &trans                 &trans                                                                    &trans          &trans                &trans                 &trans           &trans
-&trans  &trans    &trans                &trans                 &trans    &trans                                                  &trans  &trans          &trans                &trans                 &trans           &trans
-&trans  &kp F1    &kp F2                &kp F3                 &kp F4    &kp F5                                                  &kp F6  &kp F7          &kp F8                &kp F9                 &kp F10          &kp F11
-&to 0   &kp N1    &kp N2                &kp N3                 &kp N4    &kp N5                                                  &kp N6  &kp N7          &kp N8                &kp N9                 &kp N0           &kp F12
-&trans  &kp N1    &kp N2                &kp N3                 &kp N4    &kp N5  &kp N0  &trans  &to 0   &to 0   &trans  &kp N0  &kp N6  &kp N7          &kp N8                &kp N9                 &kp N0           &trans
-&trans  &kp LBKT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RBKT          &trans  &trans  &trans  &trans  &trans  &trans          &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &trans
+&trans        &trans    &trans                &trans                 &trans                                                                                      &trans          &trans                &trans                 &trans           &trans
+&trans        &trans    &trans                &trans                 &trans    &trans                                                                    &trans  &trans          &trans                &trans                 &trans           &trans
+&trans        &kp F1    &kp F2                &kp F3                 &kp F4    &kp F5                                                                    &kp F6  &kp F7          &kp F8                &kp F9                 &kp F10          &kp F11
+&toggle_base  &kp N1    &kp N2                &kp N3                 &kp N4    &kp N5                                                                    &kp N6  &kp N7          &kp N8                &kp N9                 &kp N0           &kp F12
+&trans        &kp N1    &kp N2                &kp N3                 &kp N4    &kp N5  &toggle_base  &trans  &toggle_base  &toggle_base  &trans  &kp N0  &kp N6  &kp N7          &kp N8                &kp N9                 &kp N0           &trans
+&trans        &kp LBKT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RBKT          &trans        &trans  &trans        &trans        &trans  &trans          &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &trans
             >;
         };
 
@@ -630,7 +651,7 @@
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
 &sys_reset   &none            &none            &macro_chopsuey  &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &toggle_base
             >;
         };
 
