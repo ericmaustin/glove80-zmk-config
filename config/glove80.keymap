@@ -293,14 +293,22 @@
         toggle_nums: toggle_nums {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 3 &rgb_ug RGB_COLOR_HSB(323,71,49) &rgb_ug RGB_ON>;
+            bindings =
+                <&to 3 &rgb_ug RGB_ON>,
+                <&macro_wait_time 100>,
+                <&rgb_ug RGB_COLOR_HSB(323,71,49)>;
+
             label = "TOGGLE_NUMS";
         };
 
         toggle_nav: toggle_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &rgb_ug RGB_COLOR_HSB(66,71,50) &rgb_ug RGB_ON>;
+            bindings =
+                <&to 1 &rgb_ug RGB_ON>,
+                <&macro_wait_time 100>,
+                <&rgb_ug RGB_COLOR_HSB(66,71,50)>;
+
             label = "TOGGLE_NAV";
         };
 
