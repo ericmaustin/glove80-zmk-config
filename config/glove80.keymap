@@ -150,27 +150,6 @@
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
 
-        gui_c: mac_cp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(C)>;
-            label = "MAC_CP";
-        };
-
-        gui_v: mac_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(V)>;
-            label = "MAC_PASTE";
-        };
-
-        ctrl_c: pc_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
-            label = "PC_COPY";
-        };
-
         macro_the: macro_the {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -197,27 +176,6 @@
             #binding-cells = <0>;
             bindings = <&kp Y &kp O &kp U>;
             label = "MACRO_YOU";
-        };
-
-        macro_sel_all_mac: macro_sel_all_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RG(A)>;
-            label = "MACRO_SEL_ALL_MAC";
-        };
-
-        macro_sel_next_word_mac: macro_sel_next_word_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LS(RIGHT))>;
-            label = "MACRO_SEL_NEXT_WORD_MAC";
-        };
-
-        macro_sel_prev_mac: macro_sel_prev_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LG(LEFT_ARROW))>;
-            label = "MACRO_SEL_PREV_MAC";
         };
 
         macro_not: macro_not {
@@ -260,13 +218,6 @@
             #binding-cells = <0>;
             bindings = <&kp C &kp H &kp N0 &kp P &kp S &kp U &kp N3 &kp Y>;
             label = "MACRO_CHOPSUEY";
-        };
-
-        macro_shift_tab: macro_shift_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(TAB)>;
-            label = "MACRO_SHIFT_TAB";
         };
 
         combo_when: combo_when {
@@ -317,6 +268,20 @@
             bindings = <&kp W &kp O &kp U &kp L &kp D>;
             label = "MACRO_WOULD";
         };
+
+        macro_sel_current_word: macro_sel_current_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(RIGHT) &kp LA(LS(LEFT_ARROW))>;
+            label = "MACRO_SEL_CURRENT_WORD";
+        };
+
+        macro_del_current_word: macro_del_current_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT_ARROW) &kp LA(BACKSPACE)>;
+            label = "MACRO_DEL_CURRENT_WORD";
+        };
     };
 
     combos {
@@ -334,7 +299,7 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <28 29>;
             layers = <0>;
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <200>;
         };
 
@@ -373,7 +338,7 @@
         combo_dash {
             bindings = <&kp MINUS>;
             key-positions = <29 30>;
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             require-prior-idle-ms = <200>;
             layers = <0>;
         };
@@ -404,34 +369,18 @@
 
         combo_quotes {
             bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <39 40>;
+            key-positions = <38 41>;
             timeout-ms = <100>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <300>;
             layers = <0>;
         };
 
         combo_single_quotes {
             bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <51 58>;
+            key-positions = <37 42>;
             timeout-ms = <50>;
-            require-prior-idle-ms = <200>;
-            layers = <0>;
-        };
-
-        combo_cp {
-            bindings = <&gui_c>;
-            key-positions = <24 25 26>;
-            layers = <0>;
             require-prior-idle-ms = <300>;
-            timeout-ms = <200>;
-        };
-
-        combo_paste {
-            bindings = <&gui_v>;
-            key-positions = <49 48 50>;
             layers = <0>;
-            require-prior-idle-ms = <300>;
-            timeout-ms = <200>;
         };
 
         combo_backslash {
@@ -491,15 +440,15 @@
 
         combo_semi {
             bindings = <&kp SEMI>;
-            key-positions = <26 29>;
-            timeout-ms = <100>;
+            key-positions = <51 58>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
             layers = <0>;
         };
 
         combo_colon {
             bindings = <&kp COLON>;
-            key-positions = <27 28>;
+            key-positions = <39 40>;
             timeout-ms = <50>;
             require-prior-idle-ms = <200>;
             layers = <0>;
@@ -551,8 +500,8 @@
 
         combo_carr {
             bindings = <&kp RC(LCTRL)>;
-            key-positions = <38 25>;
-            timeout-ms = <50>;
+            key-positions = <41 30 43>;
+            timeout-ms = <100>;
             require-prior-idle-ms = <200>;
             layers = <0>;
         };
@@ -568,11 +517,17 @@
         combo_the {
             bindings = <&macro_the>;
             key-positions = <27 40>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <250>;
+            layers = <0>;
         };
 
         combo_that {
             bindings = <&macro_that>;
             key-positions = <35 27 40>;
+            layers = <0>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <250>;
         };
 
         macro_this {
@@ -585,6 +540,7 @@
             key-positions = <35 58>;
             require-prior-idle-ms = <300>;
             layers = <0>;
+            timeout-ms = <100>;
         };
 
         combo_you {
@@ -597,12 +553,16 @@
             bindings = <&macro_would>;
             key-positions = <24 37 43>;
             layers = <0>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <100>;
         };
 
         combo_because {
             bindings = <&macro_because>;
             key-positions = <51 25 29>;
             layers = <0>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <100>;
         };
     };
 
@@ -619,23 +579,23 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1                 &kp F2                    &kp F3                            &kp F4                  &kp F5                                                                                                                                         &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
-&kp EQUAL              &kp N1                    &kp N2                            &kp N3                  &kp N4              &kp N5                                                                                                             &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp MINUS
-&kp TAB                &kp Q                     &kp W                             &kp E                   &kp R               &kp T                                                                                                              &kp Y   &kp U                    &kp I             &kp O             &kp P              &kp BSLH
-&kp ESC                &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S                  &ht_kp_lt LGUI D        &ht_kp_lt LSHFT F   &kp G                                                                                                              &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp SQT
-&ht_kp_lt LSHFT GRAVE  &kp Z                     &kp X                             &kp C                   &kp V               &kp B   &ht_kp_lt LEFT_SHIFT ESC  &kp RGUI         &kp LCTRL  &kp RGUI  &kp RCTRL       &ht_kp_rt RIGHT_SHIFT TAB  &kp N   &kp M                    &kp COMMA         &kp DOT           &kp FSLH           &kp RIGHT_SHIFT
-&magic 3 0             &kp HOME                  &ht_kp_lt LEFT_CONTROL PAGE_DOWN  &ht_kp_lt RALT PAGE_UP  &ht_kp_lt LGUI END          &ht_mo 2 BACKSPACE        &ht_mo 1 DELETE  &kp LALT   &kp RALT  &ht_mo 1 ENTER  &ht_mo 2 SPACE                     &kp LEFT                 &kp DOWN          &kp UP_ARROW      &kp RIGHT_ARROW    &layer_td
+&kp F1                 &kp F2                    &kp F3                            &kp F4                  &kp F5                                                                                                                                        &kp F6                   &kp F7            &kp F8            &kp F9             &kp F10
+&kp EQUAL              &kp N1                    &kp N2                            &kp N3                  &kp N4              &kp N5                                                                                                            &kp N6  &kp N7                   &kp N8            &kp N9            &kp N0             &kp MINUS
+&kp TAB                &kp Q                     &kp W                             &kp E                   &kp R               &kp T                                                                                                             &kp Y   &kp U                    &kp I             &kp O             &kp P              &kp BSLH
+&kp ESC                &ht_kp_lt LEFT_CONTROL A  &ht_kp_lt LALT S                  &ht_kp_lt LGUI D        &ht_kp_lt LSHFT F   &kp G                                                                                                             &kp H   &ht_kp_rt RIGHT_SHIFT J  &ht_kp_rt LGUI K  &ht_kp_rt RALT L  &ht_kp_rt RCTRL P  &kp SQT
+&ht_kp_lt LSHFT GRAVE  &kp Z                     &kp X                             &kp C                   &kp V               &kp B   &ht_kp_lt LEFT_SHIFT ESC  &kp RGUI         &to 1     &to 1     &kp RCTRL       &ht_kp_rt RIGHT_SHIFT TAB  &kp N   &kp M                    &kp COMMA         &kp DOT           &kp FSLH           &kp RIGHT_SHIFT
+&magic 3 0             &kp HOME                  &ht_kp_lt LEFT_CONTROL PAGE_DOWN  &ht_kp_lt RALT PAGE_UP  &ht_kp_lt LGUI END          &ht_mo 2 BACKSPACE        &ht_mo 1 DELETE  &kp LALT  &kp RALT  &ht_mo 1 ENTER  &ht_mo 2 SPACE                     &kp LEFT                 &kp DOWN          &kp UP_ARROW      &kp RIGHT_ARROW    &layer_td
             >;
         };
 
-        navnums {
+        nav {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)  &kp C_PREVIOUS  &kp C_NEXT    &kp C_PLAY_PAUSE                                                                                                 &kp RS(C_MUTE)  &kp C_VOLUME_UP        &kp C_VOL_DN               &trans  &trans
-&trans                &trans                    &trans          &trans        &trans            &trans                                                               &trans                    &trans          &trans                 &trans                     &trans  &trans
-&trans                &none                     &none           &kp UP_ARROW  &none             &macro_sel_prev_mac                                                  &macro_sel_next_word_mac  &none           &macro_new_line_above  &macro_new_line_below_mac  &kp N0  &trans
-&trans                &macro_shift_tab          &kp LEFT_ARROW  &kp UP_ARROW  &kp RIGHT         &kp TAB                                                              &kp LEFT                  &kp DOWN        &kp UP_ARROW           &kp RIGHT                  &kp N0  &trans
-&trans                &kp N1                    &kp N2          &kp N3        &kp N4            &kp N5               &trans  &trans  &trans  &trans  &trans  &trans  &kp N6                    &kp N7          &kp N8                 &kp N9                     &kp N0  &trans
-&trans                &none                     &none           &kp F11       &kp F12                                &trans  &trans  &trans  &trans  &trans  &trans                            &kp F11         &kp F12                &none                      &none   &trans
+&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)  &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                         &kp RS(C_MUTE)    &kp C_VOLUME_UP        &kp C_VOL_DN               &trans             &trans
+&trans                &trans                    &trans          &trans                   &trans                   &trans                                                               &trans     &trans            &trans                 &trans                     &trans             &trans
+&trans                &to 0                     &kp LA(RIGHT)   &kp UP_ARROW             &none                    &kp LC(T)                                                            &kp LG(C)  &kp LG(Z)         &macro_new_line_above  &macro_new_line_below_mac  &kp N0             &trans
+&to 0                 &kp LA(LEFT)              &kp LEFT_ARROW  &kp UP_ARROW             &kp RIGHT                &kp LC(G)                                                            &kp LEFT   &kp DOWN          &kp UP_ARROW           &kp RIGHT                  &kp LG(P)          &trans
+&trans                &to 0                     &kp DELETE      &macro_del_current_word  &macro_sel_current_word  &kp LA(LEFT)  &trans  &trans  &to 0   &to 0   &trans         &trans  &kp N6     &kp N7            &kp LS(TAB)            &kp TAB                    &kp LG(F)          &trans
+&trans                &none                     &none           &kp F11                  &kp F12                                &trans  &trans  &trans  &trans  &kp LA(ENTER)  &trans             &kp LA(LS(LEFT))  &kp LA(LS(DOWN))       &kp LS(LA(UP_ARROW))       &kp LS(LA(RIGHT))  &trans
             >;
         };
 
