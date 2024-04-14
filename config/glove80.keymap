@@ -31,7 +31,7 @@
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 0>, <&to 1>, <&to 2>, <&to 5>, <&mo 0>;
+            bindings = <&mo 0>, <&to 1>, <&to 2>, <&to 3>, <&mo 4>;
         };
 
         magic: magic_hold_tap {
@@ -294,8 +294,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to 3 &rgb_ug RGB_ON>,
+                <&to 3>,
                 <&macro_wait_time 100>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 250>,
                 <&rgb_ug RGB_COLOR_HSB(323,71,49)>;
 
             label = "TOGGLE_NUMS";
@@ -305,8 +307,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to 1 &rgb_ug RGB_ON>,
+                <&to 1>,
                 <&macro_wait_time 100>,
+                <&rgb_ug RGB_ON>,
+                <&macro_wait_time 250>,
                 <&rgb_ug RGB_COLOR_HSB(66,71,50)>;
 
             label = "TOGGLE_NAV";
@@ -315,7 +319,8 @@
         toggle_base: toggle_base {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &rgb_ug RGB_OFF>;
+            bindings = <&to 0>, <&macro_wait_time 100>, <&rgb_ug RGB_OFF>;
+
             label = "TOGGLE_BASE";
         };
     };
@@ -660,17 +665,6 @@
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
 &sys_reset   &none            &none            &macro_chopsuey  &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
 &none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &toggle_base
-            >;
-        };
-
-        factory_test_layer {
-            bindings = <
-&kp N0  &kp N6  &kp N2  &kp N8  &kp N4                                                                  &kp N4  &kp N8  &kp N2  &kp N6  &kp N0
-&kp N1  &kp N7  &kp N3  &kp N9  &kp N5  &kp N0                                                  &kp N0  &kp N5  &kp N9  &kp N3  &kp N7  &kp N1
-&kp N2  &kp N8  &kp N4  &kp N0  &kp N6  &kp N1                                                  &kp N1  &kp N6  &kp N0  &kp N4  &kp N8  &kp N2
-&kp N3  &kp N9  &kp N5  &kp N1  &kp N7  &kp N2                                                  &kp N2  &kp N7  &kp N1  &kp N5  &kp N9  &kp N3
-&kp N4  &kp N0  &kp N6  &kp N2  &kp N8  &kp N3  &kp N4  &kp N5  &kp N6  &kp N6  &kp N5  &kp N4  &kp N3  &kp N8  &kp N2  &kp N6  &kp N0  &kp N4
-&kp N5  &kp N1  &kp N7  &kp N3  &kp N9          &kp N7  &kp N8  &kp N9  &kp N9  &kp N8  &kp N7          &kp N9  &kp N3  &kp N7  &kp N1  &kp N5
             >;
         };
     };
