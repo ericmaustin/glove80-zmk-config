@@ -396,6 +396,64 @@
             bindings = <&macro_del_current_word>;
             key-positions = <70 49>;
         };
+
+        combo_quotes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <42 61>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <60 61>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_single_quotes {
+            bindings = <&kp SQT>;
+            key-positions = <59 42>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_minus {
+            bindings = <&kp MINUS>;
+            key-positions = <59 60>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <50 37>;
+        };
+
+        combo_plus {
+            bindings = <&kp PLUS>;
+            key-positions = <50 49>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <48 49>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
+
+        combo_bang {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <48 37>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <200>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -444,12 +502,12 @@
 
         nums {
             bindings = <
-&trans  &trans    &trans                &trans                 &trans                                                                    &trans          &trans                &trans                 &trans           &trans
-&trans  &trans    &trans                &trans                 &trans    &trans                                                  &trans  &trans          &trans                &trans                 &trans           &trans
-&trans  &kp F1    &kp F2                &kp F3                 &kp F4    &kp F5                                                  &kp F6  &kp F7          &kp F8                &kp F9                 &kp F10          &kp F11
-&to 0   &kp N1    &kp N2                &kp N3                 &kp N4    &kp N5                                                  &kp N6  &kp N7          &kp N8                &kp N9                 &kp N0           &kp F12
-&trans  &kp N1    &kp N2                &kp N3                 &kp N4    &kp N5  &to 0   &trans  &trans  &trans  &trans  &kp N0  &kp N6  &kp N7          &kp N8                &kp N9                 &kp N0           &trans
-&trans  &kp LBKT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RBKT          &trans  &trans  &to 0   &to 0   &trans  &trans          &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &trans
+&trans  &trans           &trans                &trans                 &trans                                                                          &trans          &trans                &trans                 &trans           &trans
+&trans  &trans           &trans                &trans                 &trans     &trans                                                     &trans    &trans          &trans                &trans                 &trans           &trans
+&trans  &kp F1           &kp F2                &kp F3                 &kp F4     &kp F5                                                     &kp F6    &kp F7          &kp F8                &kp F9                 &kp F10          &kp F11
+&to 0   &kp N1           &kp N2                &kp N3                 &kp N4     &kp N5                                                     &kp N6    &kp N7          &kp N8                &kp N9                 &kp N0           &kp F12
+&trans  &kp EXCLAMATION  &kp HASH              &kp PERCENT            &kp EQUAL  &kp MINUS  &to 0   &trans  &trans  &trans  &trans  &kp N0  &kp PLUS  &kp ASTERISK    &kp COMMA             &kp PERIOD             &kp SLASH        &trans
+&trans  &kp LBKT         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RBKT              &trans  &trans  &to 0   &to 0   &trans  &trans            &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &trans
             >;
         };
 
