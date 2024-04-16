@@ -94,7 +94,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             quick-tap-ms = <200>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <53 54 0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36 37 38 39 46 47 48 49 50 51 52 53 54 64 65 66 67 68 69 70 71 72 57 73 56 55 74>;
@@ -121,17 +121,24 @@
             require-prior-idle-ms = <300>;
         };
 
-        new_behavior: new_behavior {
+        ht_parens_wrap: ht_parens_wrap {
             compatible = "zmk,behavior-hold-tap";
-            label = "NEW_BEHAVIOR";
-            bindings = <&kp>, <&kp>;
+            label = "HT_PARENS_WRAP";
+            bindings = <&macro_parens_wrap>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
+
+        ht_brac_wrap: ht_brac_wrap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_BRAC_WRAP";
+            bindings = <&macro_brack_wrap>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
-            quick-tap-ms = <200>;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <5 6 7 8 9 17 18 19 20 21 29 30 31 32 33 41 42 43 44 45 59 60 61 62 63 75 76 77 78 79 16 28 40 58 74 55 56 72 73 56 57 58 73 74 69 52 53 54 71 70>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -376,13 +383,6 @@
             timeout-ms = <300>;
         };
 
-        combo_because {
-            bindings = <&macro_because>;
-            key-positions = <51 49>;
-            layers = <4>;
-            timeout-ms = <300>;
-        };
-
         macro_then {
             bindings = <&macro_then>;
             key-positions = <27 58>;
@@ -395,18 +395,6 @@
             key-positions = <44 43>;
             timeout-ms = <300>;
             layers = <4>;
-        };
-
-        macro_del_current_word {
-            bindings = <&macro_del_current_word>;
-            key-positions = <70 49>;
-        };
-
-        combo_said {
-            bindings = <&macro_said>;
-            key-positions = <36 35>;
-            layers = <4>;
-            timeout-ms = <300>;
         };
 
         macro_cs {
@@ -432,7 +420,7 @@
             bindings = <&kp UNDERSCORE>;
             key-positions = <60 61>;
             layers = <0>;
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             require-prior-idle-ms = <300>;
         };
 
@@ -469,45 +457,45 @@
 
         syms {
             bindings = <
-&trans  &trans           &trans           &trans             &trans                                                                                                  &trans             &trans         &trans            &trans         &trans
-&trans  &trans           &none            &none              &trans                 &trans                                                           &trans          &trans             &trans         &trans            &trans         &trans
-&trans  &kp EXCLAMATION  &kp AT_SIGN      &kp HASH           &kp DOLLAR             &kp PERCENT                                                      &kp CARET       &kp AMPERSAND      &kp ASTERISK   &kp QUESTION      &kp UNDER      &trans
-&trans  &kp TILDE        &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp PLUS                                                         &kp MINUS       &kp SINGLE_QUOTE   &kp COLON      &kp LESS_THAN     &kp PIPE       &trans
-&trans  &kp GRAVE        &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL    &trans   &mo 4  &trans  &trans  &mo 4  &kp RS(TAB)  &kp UNDERSCORE  &kp DOUBLE_QUOTES  &kp SEMICOLON  &kp GREATER_THAN  &kp BACKSLASH  &none
-&trans  &none            &kp INS          &kp F11            &kp F12                             &kp DEL  &mo 4  &trans  &trans  &mo 4  &trans                       &trans             &trans         &none             &none          &trans
+&trans  &trans           &trans           &trans                        &trans                                                                                                               &trans             &trans         &trans            &trans         &trans
+&trans  &trans           &none            &none                         &trans                              &trans                                                           &trans          &trans             &trans         &trans            &trans         &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN      &kp HASH                      &kp DOLLAR                          &kp PERCENT                                                      &kp CARET       &kp AMPERSAND      &kp ASTERISK   &kp QUESTION      &kp UNDER      &trans
+&trans  &kp TILDE        &kp LEFT_BRACE   &ht_brac_wrap 0 LEFT_BRACKET  &ht_parens_wrap 0 LEFT_PARENTHESIS  &kp PLUS                                                         &kp MINUS       &kp SINGLE_QUOTE   &kp COLON      &kp LESS_THAN     &kp PIPE       &trans
+&trans  &kp GRAVE        &kp RIGHT_BRACE  &kp RIGHT_BRACKET             &kp RIGHT_PARENTHESIS               &kp EQUAL    &trans   &mo 4  &trans  &trans  &mo 4  &kp RS(TAB)  &kp UNDERSCORE  &kp DOUBLE_QUOTES  &kp SEMICOLON  &kp GREATER_THAN  &kp BACKSLASH  &none
+&trans  &none            &kp INS          &kp F11                       &kp F12                                          &kp DEL  &mo 4  &trans  &trans  &mo 4  &trans                       &trans             &trans         &none             &none          &trans
             >;
         };
 
         nums {
             bindings = <
-&trans  &trans            &trans           &trans             &trans                                                                                         &trans        &trans        &trans        &trans        &trans
-&trans  &trans            &trans           &trans             &trans                 &trans                                                       &trans     &trans        &trans        &trans        &trans        &trans
-&trans  &kp EQUAL         &kp PLUS         &kp HASH           &kp DOLLAR             &kp PERCENT                                                  &kp PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &trans
-&to 0   &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp PLUS                                                     &kp N0     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp N0        &trans
-&trans  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp EQUAL    &kp N0  &trans  &trans  &trans  &trans  &kp N0  &kp MINUS  &kp N7        &kp N8        &kp N9        &kp SLASH     &trans
-&trans  &trans            &trans           &trans             &trans                              &trans  &mo 4   &to 0   &to 0   &to 4   &trans             &kp STAR      &kp N0        &kp HASH      &none         &trans
+&trans  &trans            &trans           &trans                        &trans                                                                                                      &trans        &trans        &trans        &trans        &trans
+&trans  &trans            &trans           &trans                        &trans                              &trans                                                       &trans     &trans        &trans        &trans        &trans        &trans
+&trans  &kp EQUAL         &kp PLUS         &kp HASH                      &kp DOLLAR                          &kp PERCENT                                                  &kp PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK  &trans
+&to 0   &kp LESS_THAN     &kp LEFT_BRACE   &ht_brac_wrap 0 LEFT_BRACKET  &ht_parens_wrap 0 LEFT_PARENTHESIS  &kp PLUS                                                     &kp N0     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp N0        &trans
+&trans  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET             &kp RIGHT_PARENTHESIS               &kp EQUAL    &kp N0  &trans  &trans  &trans  &trans  &kp N0  &kp MINUS  &kp N7        &kp N8        &kp N9        &kp SLASH     &trans
+&trans  &trans            &trans           &trans                        &trans                                           &trans  &mo 4   &to 0   &to 0   &to 4   &trans             &kp STAR      &kp N0        &kp HASH      &none         &trans
             >;
         };
 
         nav {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)  &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                                                    &kp RS(C_MUTE)    &kp C_VOLUME_UP   &kp C_VOL_DN               &trans             &trans
-&trans                &trans                    &trans          &trans                   &trans                   &trans                                                                          &trans                     &trans            &trans            &trans                     &trans             &trans
-&trans                &to 0                     &kp LA(RIGHT)   &kp UP_ARROW             &macro_paste_replace     &kp LC(T)                                                                       &kp LG(C)                  &kp LG(Z)         &kp INS           &macro_new_line_below_mac  &kp N0             &trans
-&to 0                 &kp LA(LEFT)              &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT                &kp LC(G)                                                                       &kp LEFT                   &kp DOWN          &kp UP_ARROW      &kp RIGHT                  &kp LG(P)          &trans
-&trans                &kp LG(Z)                 &kp DELETE      &macro_del_current_word  &macro_sel_current_word  &kp LA(LEFT)  &trans          &to 0      &trans  &trans  &to 0          &trans  &macro_new_line_below_mac  &none             &kp LS(TAB)       &kp TAB                    &kp LG(F)          &trans
-&trans                &none                     &none           &kp F11                  &kp F12                                &kp LEFT_ARROW  &kp RIGHT  &trans  &trans  &kp LA(ENTER)  &trans                             &kp LA(LS(LEFT))  &kp LA(LS(DOWN))  &kp LS(LA(UP_ARROW))       &kp LS(LA(RIGHT))  &trans
+&kp C_BRIGHTNESS_DEC  &kp LS(C_BRIGHTNESS_INC)  &kp C_PREVIOUS  &kp C_NEXT               &kp C_PLAY_PAUSE                                                                                                                             &kp RS(C_MUTE)  &kp C_VOLUME_UP  &kp C_VOL_DN               &trans         &trans
+&trans                &trans                    &trans          &trans                   &trans                   &trans                                                                                   &trans                     &trans          &trans           &trans                     &trans         &trans
+&trans                &to 0                     &kp LA(RIGHT)   &kp UP_ARROW             &macro_paste_replace     &kp LC(T)                                                                                &kp LG(C)                  &kp LG(Z)       &kp INS          &macro_new_line_below_mac  &kp N0         &trans
+&to 0                 &kp LA(LEFT)              &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT                &kp LC(G)                                                                                &kp LEFT                   &kp DOWN        &kp UP_ARROW     &kp RIGHT                  &kp LG(P)      &trans
+&trans                &kp LG(Z)                 &kp DELETE      &macro_del_current_word  &macro_sel_current_word  &kp LA(LEFT)  &kp LEFT_SHIFT  &to 0      &trans  &trans  &to 0          &kp RIGHT_SHIFT  &macro_new_line_below_mac  &none           &kp LS(TAB)      &kp TAB                    &kp LG(F)      &trans
+&trans                &none                     &none           &kp F11                  &kp F12                                &kp LEFT_ARROW  &kp RIGHT  &trans  &trans  &kp LA(ENTER)  &trans                                      &kp LA(LEFT)    &kp LA(DOWN)     &kp LA(UP_ARROW)           &kp LA(RIGHT)  &trans
             >;
         };
 
         macros {
             bindings = <
-&none  &none  &none  &none  &none                                                                                      &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none                                                                  &none        &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &macro_the                                                             &none        &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none                                                                  &macro_that  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &macro_because  &sk LEFT_SHIFT  &none  &none  &none  &none  &sk RSHFT  &none        &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none                  &none           &none  &none  &none  &none  &none                   &none  &none  &none  &none  &none
+&none  &none       &none       &none  &none                                                                                           &none  &none  &none  &none  &none
+&none  &none       &none       &none  &none       &none                                                                  &none        &none  &none  &none  &none  &none
+&none  &none       &macro_why  &none  &none       &macro_the                                                             &none        &none  &none  &none  &none  &none
+&none  &macro_and  &none       &none  &macro_for  &none                                                                  &macro_that  &none  &none  &none  &none  &none
+&none  &none       &none       &none  &none       &macro_because  &sk LEFT_SHIFT  &none  &none  &none  &none  &sk RSHFT  &macro_not   &none  &none  &none  &none  &none
+&none  &none       &none       &none  &none                       &none           &none  &none  &none  &none  &none                   &none  &none  &none  &none  &none
             >;
         };
 
@@ -534,12 +522,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri {
-            if-layers = <3 1>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
