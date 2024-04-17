@@ -541,7 +541,7 @@
 &trans                &to 0                     &kp LA(RIGHT)   &kp UP_ARROW             &macro_paste_replace     &kp LC(T)                                                                                &kp LG(C)                  &kp LG(Z)       &kp INS          &macro_new_line_below_mac  &kp N0         &trans
 &to 0                 &kp LA(LEFT)              &kp LEFT_ARROW  &kp DOWN_ARROW           &kp RIGHT                &kp LC(G)                                                                                &kp LEFT                   &kp DOWN        &kp UP_ARROW     &kp RIGHT                  &kp LG(P)      &trans
 &trans                &kp LG(Z)                 &kp DELETE      &macro_del_current_word  &macro_sel_current_word  &kp LA(LEFT)  &kp LEFT_SHIFT  &to 0      &trans  &trans  &to 0          &kp RIGHT_SHIFT  &macro_new_line_below_mac  &none           &kp LS(TAB)      &kp TAB                    &kp LG(F)      &trans
-&trans                &none                     &none           &kp F11                  &kp F12                                &kp LEFT_ARROW  &kp RIGHT  &trans  &trans  &kp LA(ENTER)  &trans                                      &kp LA(LEFT)    &kp LA(DOWN)     &kp LA(UP_ARROW)           &kp LA(RIGHT)  &trans
+&trans                &none                     &none           &kp F11                  &kp F12                                &kp LEFT_ARROW  &kp RIGHT  &trans  &trans  &kp LA(ENTER)  &trans                                      &kp LA(LEFT)    &kp LA(DOWN)     &kp LA(UP_ARROW)           &kp LA(RIGHT)  &to 0
             >;
         };
 
