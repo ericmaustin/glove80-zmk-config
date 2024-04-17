@@ -493,8 +493,8 @@
             bindings = <
 &trans  &trans                    &trans            &trans            &trans                                                                                           &trans                   &trans            &trans            &trans             &trans
 &trans  &trans                    &trans            &trans            &trans             &trans                                                            &trans      &trans                   &trans            &trans            &trans             &trans
-&trans  &kp Q                     &kp W             &kp O             &kp H              &kp SQT                                                           &kp SEMI    &kp L                    &kp R             &kp F             &kp Z              &trans
-&trans  &ht_kp_lt LEFT_CONTROL P  &ht_kp_lt LALT S  &ht_kp_lt LGUI A  &ht_kp_lt LSHFT T  &kp COMMA                                                         &kp PERIOD  &ht_kp_rt RIGHT_SHIFT E  &ht_kp_rt LGUI I  &ht_kp_rt RALT N  &ht_kp_rt RCTRL G  &kp SLASH
+&trans  &kp Q                     &kp W             &kp I             &kp H              &kp SQT                                                           &kp SEMI    &kp L                    &kp O             &kp F             &kp Z              &trans
+&trans  &ht_kp_lt LEFT_CONTROL P  &ht_kp_lt LALT S  &ht_kp_lt LGUI A  &ht_kp_lt LSHFT T  &kp COMMA                                                         &kp PERIOD  &ht_kp_rt RIGHT_SHIFT R  &ht_kp_rt LGUI E  &ht_kp_rt RALT N  &ht_kp_rt RCTRL G  &kp SLASH
 &trans  &kp J                     &kp V             &kp C             &kp D              &ht_kp_lt LCMD B  &trans  &trans  &trans  &trans  &trans  &trans  &kp Y       &kp U                    &kp M             &kp K             &kp X              &trans
 &trans  &trans                    &trans            &trans            &trans                               &trans  &trans  &trans  &trans  &trans  &trans              &trans                   &trans            &trans            &trans             &trans
             >;
