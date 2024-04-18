@@ -149,6 +149,33 @@
             tapping-term-ms = <350>;
             flavor = "tap-preferred";
         };
+
+        mm_comma_semi: mm_comma_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_COMMA_SEMI";
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_period_colon: mm_period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_PERIOD_COLON";
+            bindings = <&kp PERIOD>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_question_exc: mm_question_exc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_QUESTION_EXC";
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
