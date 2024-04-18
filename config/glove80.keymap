@@ -544,47 +544,6 @@
             key-positions = <52 57>;
         };
 
-        macro_this {
-            bindings = <&macro_this>;
-            key-positions = <27 30>;
-            timeout-ms = <250>;
-        };
-
-        combo_would {
-            bindings = <&macro_would>;
-            key-positions = <24 37>;
-            timeout-ms = <300>;
-        };
-
-        macro_then {
-            bindings = <&macro_then>;
-            key-positions = <27 58>;
-            timeout-ms = <300>;
-        };
-
-        macro_please {
-            bindings = <&macro_please>;
-            key-positions = <44 43>;
-            timeout-ms = <300>;
-        };
-
-        macro_cs {
-            bindings = <&macro_chopsuey>;
-            key-positions = <49 36>;
-            timeout-ms = <300>;
-        };
-
-        combo_fear {
-            bindings = <&macro_fearisthemindkiller>;
-            key-positions = <38 25>;
-            timeout-ms = <300>;
-        };
-
-        combo_question {
-            bindings = <&macro_question>;
-            key-positions = <23 29>;
-        };
-
         combo_underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <60 61>;
@@ -599,6 +558,20 @@
             timeout-ms = <100>;
             require-prior-idle-ms = <300>;
             layers = <0>;
+        };
+
+        combo_z {
+            bindings = <&kp Z>;
+            key-positions = <47 48>;
+            timeout-ms = <75>;
+            layers = <2>;
+        };
+
+        combo_j {
+            bindings = <&kp J>;
+            key-positions = <62 61>;
+            timeout-ms = <75>;
+            layers = <2>;
         };
     };
 
